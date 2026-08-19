@@ -3,9 +3,16 @@
 <head>
   <script>
     (function() {
+      const LOCAL_STORAGE_KEY_CURRENT_THEME = 'ember-hugo-current-theme';
+
+      const DARK_THEME_MEDIA_QUERY = '(prefers-color-scheme: dark)';
+
+      const DARK_THEME = 'dark';
+      const LIGHT_THEME = 'light';
+
       try {
-        var stored = localStorage.getItem('ember-theme');
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const stored = localStorage.getItem(LOCAL_STORAGE_KEY_CURRENT_THEME);
+        const theme = stored || (window.matchMedia(DARK_THEME_MEDIA_QUERY).matches ? DARK_THEME : LIGHT_THEME);
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {}
     })();
