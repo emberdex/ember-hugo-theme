@@ -54,6 +54,8 @@ theme = 'ember'
     mastodon = "https://mastodon.social/@username"
     linkedin = "https://linkedin.com/in/username"
     email = "you@example.com"
+    # If set to true, the Twitter icon in the footer is replaced with the X icon
+    use_alternative_twitter_icon = false
 
 [menus]
   [[menus.main]]
