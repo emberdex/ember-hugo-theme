@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="post-single" style="text-align: center; padding: 3rem 0;">
+  <p style="font-family: var(--font-code), monospace; font-size: 3.5rem; font-weight: 700; color: var(--accent-ember); margin-bottom: 0.5rem;">404</p>
+  <h1 class="post-single-title" style="margin-bottom: 1rem;">Page Not Found</h1>
+  <p class="post-single-desc" style="margin-bottom: 2rem;">The page you are looking for does not exist or has been moved.</p>
+  <p>
+    <a href="{{ site.Home.RelPermalink }}" style="display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-sm); text-decoration: none; font-family: var(--font-code), monospace; font-weight: 600;">
+      &larr; Return Home
+    </a>
+  </p>
+</div>
+{{ end }}

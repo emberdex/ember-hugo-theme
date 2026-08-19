@@ -1,0 +1,12 @@
+name = "ember"
+license = "MIT"
+licenselink = "https://github.com/emberdex/ember-hugo-theme/blob/main/LICENSE"
+description = "A cosy, warming Hugo theme for coding blogs."
+homepage = "https://blog.tobes.dev"
+tags = ["blog", "dark", "light", "monospace", "clean", "minimal", "responsive", "syntax-highlighting"]
+features = ["dark mode", "syntax highlighting", "copy code", "monospace typography", "table of contents", "callouts", "tags"]
+min_version = "0.120.0"
+
+[author]
+  name = "emberdex"
+  homepage = "https://blog.tobes.dev"

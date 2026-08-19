@@ -1,0 +1,64 @@
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tags-list li {
+  margin: 0;
+}
+
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-code), monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.tag-badge:hover {
+  color: var(--accent-ember);
+  background-color: var(--accent-glow-subtle);
+  border-color: var(--accent-ember);
+  text-decoration: none;
+}
+
+.tag-badge .tag-hash {
+  color: var(--accent-ember);
+  font-weight: 700;
+}
+
+.tag-badge .tag-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: var(--bg-page);
+  padding: 0.05rem 0.4rem;
+  border-radius: var(--radius-full);
+  margin-left: 0.2rem;
+}
+
+.tag-cloud-container {
+  margin: 2rem 0;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag-cloud .tag-badge {
+  font-size: 0.95rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-md);
+}

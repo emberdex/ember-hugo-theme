@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="term-container">
+  <header class="post-single-header">
+    <h1 class="post-single-title">
+      <span class="tag-hash">#</span>{{ .Title }}
+    </h1>
+    <p class="post-single-desc">{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }} tagged with "{{ .Title }}"</p>
+  </header>
+
+  <div class="post-list">
+    {{- range .Pages }}
+    <article class="post-item">
+      <div class="post-item-header">
+        <h2 class="post-item-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        <time class="post-item-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format "2006-01-02" }}
+        </time>
+      </div>
+
+      {{- with or .Description .Summary }}
+      <p class="post-item-desc">{{ . | plainify | htmlUnescape | truncate 240 }}</p>
+      {{- end }}
+
+      <div class="post-item-footer">
+        <span class="reading-time">{{ .ReadingTime }} min read</span>
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="header-inner">
+    <div class="site-branding">
+      <p class="site-title">
+        <a href="{{ site.Home.RelPermalink }}">
+          <span class="title-prefix">&gt;</span>
+          <span class="title-text">{{ site.Title }}</span>
+        </a>
+      </p>
+      {{- with site.Params.subtitle }}
+      <p class="site-subtitle">{{ . }}</p>
+      {{- end }}
+    </div>
+
+    <div class="header-controls">
+      {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+      <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+    </div>
+  </div>
+</header>

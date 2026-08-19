@@ -1,0 +1,62 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-single-header">
+    <h1 class="post-single-title">{{ .Title }}</h1>
+
+    {{- if not .Date.IsZero }}
+    <div class="post-single-meta">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      <i class="fa-regular fa-calendar"></i>
+      <span>{{ .Date.Format "January 2, 2006" }}</span>
+      </time>
+
+      <span>&bull;</span>
+      <span title="Reading time">
+        <i class="fa-regular fa-clock"></i>
+        <span>{{ .ReadingTime }} min read</span>
+      </span>
+
+      <span>&bull;</span>
+      <span title="Word count">
+        <i class="fa-regular fa-file-lines"></i>
+        <span>{{ .WordCount }} words</span>
+      </span>
+    </div>
+    {{- end }}
+
+    {{- with .Description }}
+    <p class="post-single-desc">{{ . }}</p>
+    {{- end }}
+  </header>
+
+  {{ partial "toc.html" . }}
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  <footer class="post-single-footer">
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+
+    {{- if or .PrevInSection .NextInSection }}
+    <nav class="post-pagination" aria-label="Post Navigation">
+      {{- with .PrevInSection }}
+      <a class="post-pagination-card prev" href="{{ .RelPermalink }}" rel="prev">
+        <span class="post-pagination-label">&larr; Previous Post</span>
+        <span class="post-pagination-title">{{ .Title }}</span>
+      </a>
+      {{- else }}
+      <div></div>
+      {{- end }}
+
+      {{- with .NextInSection }}
+      <a class="post-pagination-card next" href="{{ .RelPermalink }}" rel="next">
+        <span class="post-pagination-label">Next Post &rarr;</span>
+        <span class="post-pagination-title">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </nav>
+    {{- end }}
+  </footer>
+</article>
+{{ end }}

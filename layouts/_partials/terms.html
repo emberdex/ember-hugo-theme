@@ -1,0 +1,14 @@
+{{- $page := .page -}}
+{{- $taxonomy := .taxonomy | default "tags" -}}
+
+{{- with $page.GetTerms $taxonomy }}
+<ul class="tags-list" aria-label="Tags">
+  {{- range . }}
+    <li>
+      <a class="tag-badge" href="{{ .RelPermalink }}">
+        <span class="tag-hash">#</span>{{ .LinkTitle }}
+      </a>
+    </li>
+  {{- end }}
+</ul>
+{{- end }}

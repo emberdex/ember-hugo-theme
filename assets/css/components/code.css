@@ -1,0 +1,106 @@
+code:not(pre code) {
+  font-family: var(--font-code), monospace;
+  font-size: 0.88em;
+  padding: 0.2em 0.4em;
+  color: var(--code-inline-text);
+  background-color: var(--code-inline-bg);
+  border: 1px solid var(--code-inline-border);
+  border-radius: var(--radius-sm);
+  word-break: break-word;
+}
+
+.code-block-container {
+  position: relative;
+  margin: 1.75rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--code-border);
+  background-color: var(--code-bg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  background-color: var(--code-header-bg);
+  border-bottom: 1px solid var(--code-border);
+  font-family: var(--font-code), monospace;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.code-block-lang {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.code-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-code), monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.code-copy-btn:hover {
+  color: var(--accent-ember);
+  background-color: var(--accent-glow-subtle);
+  border-color: var(--accent-glow);
+}
+
+.code-copy-btn.copied {
+  color: #16a34a;
+  border-color: rgba(22, 163, 74, 0.3);
+  background-color: rgba(22, 163, 74, 0.1);
+}
+
+html[data-theme="dark"] .code-copy-btn.copied {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.3);
+  background-color: rgba(74, 222, 128, 0.1);
+}
+
+.code-copy-btn svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+}
+
+.code-block-container pre,
+pre {
+  margin: 0;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  font-family: var(--font-code), monospace;
+  font-size: 0.88rem;
+  line-height: var(--line-height-code);
+  background-color: var(--code-bg);
+}
+
+pre:not(.code-block-container pre) {
+  margin: 1.75rem 0;
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+pre code {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}

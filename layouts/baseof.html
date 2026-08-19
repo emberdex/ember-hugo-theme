@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale | default `en-GB` }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>
+  <script>
+    (function() {
+      try {
+        var stored = localStorage.getItem('ember-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="site-wrapper">
+    {{ partial "header.html" . }}
+    <main id="main-content">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+</html>

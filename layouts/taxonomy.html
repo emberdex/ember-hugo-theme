@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="taxonomy-container">
+  <header class="post-single-header">
+    <h1 class="post-single-title">{{ .Title }}</h1>
+    <p class="post-single-desc">Explore posts by topic</p>
+  </header>
+
+  <div class="tag-cloud-container">
+    <div class="tag-cloud">
+      {{- range .Data.Terms.Alphabetical }}
+      <a class="tag-badge" href="{{ .Page.RelPermalink }}">
+        <span class="tag-hash">#</span>{{ .Page.LinkTitle }}
+        <span class="tag-count">{{ .Count }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </div>
+</div>
+{{ end }}

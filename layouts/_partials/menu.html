@@ -1,0 +1,24 @@
+{{- $page := .page -}}
+{{- $menuID := .menuID | default "main" -}}
+
+{{- with index site.Menus $menuID }}
+<nav class="main-nav" aria-label="Main Navigation">
+  <ul>
+    {{- range . }}
+      {{- $isCurrent := or ($page.IsMenuCurrent $menuID .) ($page.HasMenuCurrent $menuID .) -}}
+      {{- if not $isCurrent -}}
+        {{- if eq $page.RelPermalink .URL -}}
+          {{- $isCurrent = true -}}
+        {{- else if and (ne .URL "/") (hasPrefix $page.RelPermalink .URL) -}}
+          {{- $isCurrent = true -}}
+        {{- end -}}
+      {{- end -}}
+      <li>
+        <a href="{{ .URL }}"{{ if $isCurrent }} class="active" aria-current="page"{{ end }}>
+          {{- .Name -}}
+        </a>
+      </li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}

@@ -1,0 +1,81 @@
+.chroma {
+  color: var(--code-text);
+  background-color: transparent;
+  font-family: var(--font-code), monospace;
+  font-size: 0.88rem;
+  line-height: var(--line-height-code);
+  tab-size: 2;
+  -webkit-text-size-adjust: none;
+}
+
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+}
+
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.chroma .lnt {
+  user-select: none;
+  margin-right: 1em;
+  padding-right: 0.75em;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border-subtle);
+}
+
+.chroma .ln {
+  user-select: none;
+  margin-right: 1em;
+  padding-right: 0.75em;
+  color: var(--text-muted);
+}
+
+.chroma .hl {
+  display: block;
+  width: 100%;
+  background-color: var(--accent-glow-subtle);
+  border-left: 2px solid var(--accent-ember);
+  margin-left: -1rem;
+  padding-left: calc(1rem - 2px);
+}
+
+.chroma .line {
+  display: flex;
+}
+
+:root {
+  .chroma .k, .chroma .kp, .chroma .kr, .chroma .nt { color: var(--code-chroma-keyword-1); font-weight: 600; }
+  .chroma .kd { color: var(--code-chroma-keyword-declaration); font-weight: 600; }
+  .chroma .kc, .chroma .kn { color: var(--code-chroma-keyword-2); font-weight: 600; }
+  .chroma .kt { color: var(--code-chroma-keyword-type); font-weight: 600; }
+  .chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .s2, .chroma .se, .chroma .si, .chroma .sx, .chroma .s1, .chroma .ss { color: var(--code-chroma-string-1); }
+  .chroma .sr { color: var(--code-chroma-string-2); }
+  .chroma .sd, .chroma .sh { color: var(--code-chroma-string-doc); font-style: italic; }
+  .chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo { color: var(--code-chroma-literal); }
+  .chroma .nf, .chroma .fm { color: var(--code-chroma-name-function); font-weight: 600; }
+  .chroma .nc, .chroma .no { color: var(--code-chroma-class-constant); font-weight: 600; }
+  .chroma .na { color: var(--code-chroma-name-attribute); }
+  .chroma .py, .chroma .nl, .chroma .nn { color: var(--code-chroma-name-2); }
+  .chroma .nb, .chroma .bp { color: var(--code-chroma-name-builtin); }
+  .chroma .nv, .chroma .vc, .chroma .vg, .chroma .vi, .chroma .vm { color: var(--code-chroma-name-variable); }
+  .chroma .nd { color: var(--code-chroma-name-decorator); font-weight: 600; }
+  .chroma .ni { color: var(--code-chroma-name-entity); }
+  .chroma .ne { color: var(--code-chroma-name-exception); font-weight: 600; }
+  .chroma .o, .chroma .ow, .chroma .or { color: var(--code-chroma-operator); font-weight: 600; }
+  .chroma .p { color: var(--code-chroma-punctuation); }
+  .chroma .c, .chroma .ch, .chroma .cm, .chroma .c1, .chroma .cs, .chroma .cp, .chroma .cpf { color: var(--code-chroma-comment); font-style: italic; }
+  .chroma .gd { color: var(--code-chroma-generic-deleted); background-color: var(--code-chroma-generic-deleted-bg); }
+  .chroma .gi { color: var(--code-chroma-generic-inserted); background-color: var(--code-chroma-generic-inserted-bg); }
+  .chroma .ge { font-style: italic; }
+  .chroma .gs { font-weight: 700; }
+  .chroma .gh, .chroma .gu { color: var(--code-chroma-generic-headings); font-weight: 700; }
+  .chroma .err { color: var(--code-chroma-error); text-decoration: underline wavy; }
+}
